@@ -98,6 +98,8 @@ func main() {
 			// since unicreds need to be able to do this
 			http_proxy := fmt.Sprintf("http://proxy.%s.%s.%s.%s:3128/", d.Environment, d.Region, d.AccountName, d.ConsulDomain)
 			https_proxy := fmt.Sprintf("https://proxy.%s.%s.%s.%s:3128/", d.Environment, d.Region, d.AccountName, d.ConsulDomain)
+			log.Printf("http proxy: %s", http_proxy)
+			log.Printf("https proxy: %s", https_proxy)
 			os.Setenv("HTTP_PROXY", http_proxy)
 			os.Setenv("HTTPS_PROXY", https_proxy)
 		}
